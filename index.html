@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti, Con Todo Mi Corazón</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        header {
+            position: relative;
+            height: 400px;
+            background: url('path-to-background-image.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .header-container {
+            background: linear-gradient(145deg, rgba(231, 76, 60, 0.9), rgba(231, 76, 60, 0.7));
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            z-index: 0;
+            filter: blur(15px);
+            transform: scale(1.2);
+        }
+        .header-container h1, .header-container h2 {
+            position: relative;
+            z-index: 1;
+        }
+        .header-container h1 {
+            font-family: 'Lora', serif;
+            font-size: 3.5em;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        .header-container h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.8em;
+            margin: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section-content h3 {
+            font-family: 'Lora', serif;
+            color: #e74c3c;
+            margin-top: 0;
+        }
+        .section-content p {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .commitments-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .commitments-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 300px;
+            text-align: center;
+        }
+        .commitments-card h4 {
+            font-family: 'Lora', serif;
+            color: #e74c3c;
+            margin-top: 0;
+        }
+        .commitments-card p {
+            font-family: 'Roboto', sans-serif;
+            margin: 10px 0;
+        }
+        .final-message {
+            position: relative;
+            background: #e74c3c;
+            color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 20px 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .final-message h3 {
+            font-family: 'Lora', serif;
+            font-size: 2em;
+            margin: 0;
+        }
+        .final-message p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+        }
+        .final-message:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.5); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.1; }
+        }
+        .contact-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .contact-info h3 {
+            font-family: 'Lora', serif;
+            color:  black;
+            margin-top: 0;
+        }
+        .contact-info p {
+            font-family: 'Roboto', sans-serif;
+            margin: 10px 0;
+        }
+        .contact-info button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+        .contact-info button:hover {
+            background-color: #c0392b;
+        }
+        footer {
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Para Ti, Con Todo Mi Corazón</h1>
+            <h2>Un viaje a través de mi arrepentimiento y amor por ti</h2>
+        </div>
+    </header>
+
+    <section class="section introduction">
+        <div class="section-content">
+            <p>Mira cómo te he estado pensando despues de lo que pasó, te ves tan hermosa que no se me quita de la cabeza tu bello y angelical rostro, que al verlo me ilumina mi alma desechada.</p>
+            <img src="preciosa.jpg" style="max-width: 30%; height: auto; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        </div>
+    </section>
+
+    <section class="section reflection">
+        <div class="section-content">
+            <h3>Reflexión de mi error</h3>
+            <p>He estado reflexionando sobre mis acciones y entiendo cómo te han afectado. 
+                Todo el mundo dice que cuando amas a alguien tienes que aprender a dejarlo ir.
+                Perdóname...
+                No me quiero ir, solo quiero estar contigo para toda la eternidad.
+                Aprendí a quererte y amarte, cada día me acostumbre a ti, a tu voz, a tus llamadas, a tus mensajes a todo, me enamoré plenamente de ti y es lo mejor que tengo en la vida y quiero que me des esa oportunidad para hacerte feliz dejando atras el pasado donde debe de estar.
+            </p>
+            <!-- Aquí puedes añadir una línea de tiempo interactiva o un collage -->
+        </div>
+    </section>
+
+    <section class="section commitments">
+        <div class="header-container">
+            <h3>Mis Promesas</h3>
+        </div>
+        <div class="commitments-container">
+            <div class="commitments-card">
+                <h4>Escuchar Más</h4>
+                <p>Prometo estar más atento a tus sentimientos y necesidades.</p>
+            </div>
+            <div class="commitments-card">
+                <h4>Comunicación Abierta</h4>
+                <p>Me comprometo a ser más abierto y transparente en nuestra comunicación.</p>
+            </div>
+            <div class="commitments-card">
+                <h4>Mostrar Más Aprecio</h4>
+                <p>Voy a demostrarte mi aprecio y amor a través de pequeñas y grandes acciones.</p>
+            </div>
+            <div class="commitments-card">
+                <h4>Demostrarte</h4>
+                <p>Voy a seguir con mi labor de demostrarte que el pasado quedo en el pasado y que nuestro presente y futuro no va a ser jamas ese pasado como lo he estado haciendo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-info">
+        <div class="section-content">
+            <h3>Te pido de favor que no nos dejemos enfermar y que nos calcine el pasado a nuestro presente y futuro, ambos nos amamos tan fuerte  y ese amor es inevitable de lo que sentimos, sigue a tu corazon y escucha como esta dolido por estar con esta separacion, te lo imploro amor de mi vida y de toda la eternidad, hazlo posible.
+            </h3>
+            <button onclick="showThanksMessage()">Me perdonas?</button>
+            <div id="thanks-message" class="thanks-message">¡Te Amo!</div>
+        </div>
+    </section>
+
+    <section class="section final-message">
+        <h3>Un Mensaje Directo Desde el Corazón</h3>
+        <p>No puedo cambiar el pasado y el pasado queda en el pasado, pero prometo a hacer todo lo posible para seguir teniendo y  mejorando el presente y construir un futuro mejor para nosotros. Por favor, perdóname y déjame demostrarte cuánto te amo.</p>
+    </section>
+
+    <script>
+        function showThanksMessage() {
+            document.getElementById('thanks-message').style.display = 'block';
+        }
+    </script>
+
+    <footer>
+        <p>Gracias por tomarte el tiempo de leer esto. Siempre estaré aquí para ti.</p>
+    </footer>
+</body>
+</html>
